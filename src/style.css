@@ -1,0 +1,52 @@
+body{
+    background: #df7e7e;
+    overflow: hidden;
+}
+body main{
+    padding: 50px;
+    position: absolute;
+    z-index: 2;
+}
+
+body:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url('pareja3.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.primerapantalla{
+    display: inline-flex;
+    width: 100%;
+}
+.col1{
+   width: 60%;
+   margin: 20px;
+}
+.col2{
+   background: grey;
+   width: 40%;
+   margin: 0px 50px 0px 150px;
+   padding: 20px;
+   
+}
+.Cifrado{
+    width: 800px;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    background: white;
+    opacity: 0.6;
+    margin: 30px 170px;
+    padding: 20px 20px;
+    
+    
+}
