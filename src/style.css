@@ -43,8 +43,7 @@ body:before{
     font-size: 15px;
     color: black;
     text-align: center;
-    background: white;
-    opacity: 0.6;
+    background: rgb(247, 237, 237,0.6);
     margin: 30px 170px;
     padding: 20px 20px;
     
