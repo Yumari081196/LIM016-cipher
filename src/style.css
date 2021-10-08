@@ -1,9 +1,9 @@
 body{
-    background: #df7e7e;
+    background: #FD9A9A;
     overflow: hidden;
 }
 body main{
-    padding: 50px;
+    padding: 0px 20px;
     position: absolute;
     z-index: 2;
 }
@@ -17,35 +17,79 @@ body:before{
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.6;
-    background-image: url('pareja3.jpg');
+    opacity: 0.5;
+    background-image: url('enamorados.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+h1{
+    font-family: 'Baumans', cursive;
+    font-size: 100px;
+    color: #FF6363;
+    margin: 45px;
+}
+h3{
+    font-size: 30px;
+    color: rgb(247, 240, 240);
 }
 .primerapantalla{
     display: inline-flex;
     width: 100%;
 }
 .col1{
-   width: 60%;
-   margin: 20px;
+   width: 680px;
+   font-size: 25px;
+    color: rgb(94, 50, 59);
+    margin: 20px;
+   
 }
 .col2{
-   background: grey;
-   width: 40%;
-   margin: 0px 50px 0px 150px;
-   padding: 20px;
-   
+    border-radius: 10px;
+   background: rgb(243, 232, 232,0.75);
+   width: 290px;
+   height: 256px;
+   margin: 0px 20px 0px 90px;
+   padding: 5px 20px;
+}
+.datosuser{
+    color: #AD2EB8;
+   font-size: 20px;
+   margin: 28px 5px 5px 8px;
+}
+#advertencia{
+    font-size: 15px;
+    margin: 4px;
+    color: crimson;
 }
 .Cifrado{
     width: 800px;
-    font-size: 15px;
-    color: black;
+    height: 200px;
+    font-size: 25px;
+    color: #AD2EB8;
     text-align: center;
     background: rgb(247, 237, 237,0.6);
-    margin: 30px 170px;
+    margin: 30px 225px;
     padding: 20px 20px;
-    
-    
+}
+.botones{
+    background: #F94444;
+    color: blanchedalmond;
+    font-size: 25px;
+    width: 150px;
+    border-width: 1mm;
+    border-radius: 10px;
+    border-color: rgb(104, 7, 47);
+    margin:20px 20px;
+}
+.botones:hover{
+    background: rgb(20, 20, 20);
+    color: rgb(177, 146, 196);
+}
+.botones:active{
+    background: rgb(148, 147, 147);
+    color: rgb(41, 3, 53);
+}
+#textcodeencode{
+    color: #ac9837;
 }

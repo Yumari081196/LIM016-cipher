@@ -3,20 +3,18 @@ import cipher from './cipher.js';
 const correccion = document.getElementById("Boton");
 correccion.addEventListener("click", () => {
   let edad = document.getElementById("Edad").value;
-  if (edad == "") {
+  let edadInt = Number(edad);
+  if (isNaN(edadInt) || edadInt <= 0 || edadInt == "") {
+    document.getElementById("advertencia").innerHTML = "Advertencia";
+    throw new TypeError("Ocurrio un error");
+  }
+  if (edadInt < 15 || edadInt>90) {
     document.getElementById("advertencia").innerHTML = "Advertencia";
     return;
   } else {
-    let edadInt = parseInt(edad);
-    if (edadInt < 15) {
-      document.getElementById("advertencia").innerHTML = "Advertencia";
-      return;
-    } else {
-      document.getElementById("primeraPantalla").style.display = "none";
-      document.getElementById("segundaPantalla").style.display = "block";
-    }
+    document.getElementById("primeraPantalla").style.display = "none";
+    document.getElementById("segundaPantalla").style.display = "block";
   }
-
 })
 const bttnCode = document.getElementById("Codificar");
 bttnCode.addEventListener("click", () => {

@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Caesar Cipher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -15,23 +16,20 @@
       <h3>Codifica esos mensajes que solo compartirias con tu ser amado
         mediante un lenguaje que solo ustedes dos conozcan manteniendo en privado esos temas
         que no quieres que nadie más se entere</h3>
+        
       <section class="primerapantalla">
         <section class="col1">
-          <h5>Compartir tu ordenador o smartphone(o extraviarlos) siempre impedira que cuentes con absoluta privacidad
-            para intercambiar mensajes de forma segura, y mas si tienes mensajitos con esa persona especial. Lovecrypt
-            es una app que
-            cifra y descifra mensajes mediante el cifrado cesar. Empieza a codificar tus frases de amor .
-          </h5>
-
+          Compartir tu ordenador o smartphone(o extraviarlos) siempre impedira que cuentes con absoluta privacidad
+            para intercambiar mensajes de forma segura, y mas aun si quieres enviar o recibir mensajes de amor. Lovecrypt
+            es una app que cifra y descifra textos
         </section>
         <section class="col2">
-          <p>jovenes y adultos</p>
-          <h4>ALIAS(Opcional)</h4>
-          <input type="text">
-          <h4>EDAD(Obligatorio)</h4>
-          <input type="number" name="" id="Edad">
-          <p id="advertencia"></p>
-          <button id="Boton">Continuar</button>
+          <p class="datosuser">ALIAS(Opcional)</p>
+          <input type="text" size="35">
+          <p class="datosuser">EDAD(Obligatorio)</p>
+          <input type="number" id="Edad" style="width:280px" max="90">
+          <i><p id="advertencia"></p></i>
+          <center><button id="Boton" class="botones">Continuar</button></center>
         </section>
       </section>
 
@@ -39,14 +37,14 @@
     <article id="segundaPantalla" style="display: none;">
       <h2>BIENVENIDA</h2>
       <p>INTRODUCCION</p>
-      <input type="number" id="Desplazamiento">
+      
       <section class="Cifrado">
-        <p>Ingresar texto a cifrar o descifrar</p>
-        <input type="text" id="textParaCipher">
-        <p id="textcodeencode"></p>
-        <button id="refresh">refrescar</button>
-        <button id="Codificar">Cifrar</button>
-        <button id="Decodificar">Descifrar</button>
+        Colocar offset  <input type="number" id="Desplazamiento" style="width:350px"><br>
+        Ingresar texto a cifrar o descifrar  <input type="text" id="textParaCipher">
+        <i><p id="textcodeencode"></p></i>
+        <button id="refresh" class="botones">refrescar</button>
+        <button id="Codificar" class="botones">Cifrar</button>
+        <button id="Decodificar" class="botones">Descifrar</button>
       </section>
     </article>
   </main>
