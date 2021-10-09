@@ -53,7 +53,7 @@ h3{
    padding: 5px 20px;
 }
 .datosuser{
-    color: #AD2EB8;
+  color: #AD2EB8;
    font-size: 20px;
    margin: 28px 5px 5px 8px;
 }
@@ -64,13 +64,16 @@ h3{
 }
 .Cifrado{
     width: 800px;
-    height: 200px;
+    height: 280px;
     font-size: 25px;
     color: #AD2EB8;
     text-align: center;
     background: rgb(247, 237, 237,0.6);
     margin: 30px 225px;
-    padding: 20px 20px;
+    padding: 0px 20px;
+}
+#formulario{
+    display: inline-flex;
 }
 .botones{
     background: #F94444;
@@ -80,7 +83,7 @@ h3{
     border-width: 1mm;
     border-radius: 10px;
     border-color: rgb(104, 7, 47);
-    margin:20px 20px;
+    margin:20px 40px 5px 40px;
 }
 .botones:hover{
     background: rgb(20, 20, 20);
@@ -91,5 +94,6 @@ h3{
     color: rgb(41, 3, 53);
 }
 #textcodeencode{
+    font-size: 15px;
     color: #ac9837;
 }

@@ -1,45 +1,41 @@
 const cipher = {
-  encode: (m, y) => {
-    if(isNaN(m)||m<=0||m==""){
+  encode: (Offset, str) => {
+    if(isNaN(Offset)||Offset<=0||Offset==""){
       throw new TypeError("Ocurrio un error");
     }
-    let newstrinarray = "";
-    let x = m % 26;
-    for (let i = 0; i < y.length; i++) {
-      if ((y.charCodeAt(i) <= 90 && y.charCodeAt(i) >= 65) ||y.charCodeAt(i)==32) {
-        if (y.charCodeAt(i) > 90 - x) {
-          newstrinarray += String.fromCharCode(y.charCodeAt(i) - 26 + x);
-        }else if (y.charCodeAt(i) == 32) {
-          newstrinarray += String.fromCharCode(32);
+    let newstring = "";
+    let x = Offset % 26;
+    for (let i = 0; i < str.length; i++) {
+      if ((str.charCodeAt(i) <= 90 && str.charCodeAt(i) >= 65)||(str.charCodeAt(i) <= 122 && str.charCodeAt(i) >= 97)) {
+        if ((str.charCodeAt(i) > 90 - x && str.charCodeAt(i)<=90)||str.charCodeAt(i) > 122 - x ) {
+          newstring += String.fromCharCode(str.charCodeAt(i) - 26 + x);
         } else {
-          newstrinarray += String.fromCharCode(y.charCodeAt(i) + x);
+          newstring += String.fromCharCode(str.charCodeAt(i) + x);
         }
       }else{
-        newstrinarray='<i>"Ops, caracteres ingresados no validos"</i>';
+        newstring += String.fromCharCode(str.charCodeAt(i));
       }
     }
-    return newstrinarray;
+    return newstring;
   },
-  decode: (m, y) => {
-    if(isNaN(m)||m<=0||m==""){
-      throw new TypeError("HOLAAAAAAAAAAAAAAAAAA");
+  decode: (Offset, str) => {
+    if(isNaN(Offset)||Offset<=0||Offset==""){
+      throw new TypeError("Ocurrio un error");
     }
-    let newstrinarray = "";
-    let x = m % 26;
-    for (let i = 0; i < y.length; i++) {
-      if((y.charCodeAt(i) <= 90 && y.charCodeAt(i) >= 65) ||y.charCodeAt(i)==32){
-        if (y.charCodeAt(i) >= 65 + x) {
-          newstrinarray += String.fromCharCode(y.charCodeAt(i) - x);
-        }else if (y.charCodeAt(i) == 32) {
-          newstrinarray += String.fromCharCode(32);
+    let newstring = "";
+    let x = Offset % 26;
+    for (let i = 0; i < str.length; i++) {
+      if((str.charCodeAt(i) <= 90 && str.charCodeAt(i) >= 65)||(str.charCodeAt(i) <= 122 && str.charCodeAt(i) >= 97)){
+        if ((str.charCodeAt(i) >= 65 + x && str.charCodeAt(i) <= 90)||str.charCodeAt(i) >= 97+x) {
+          newstring += String.fromCharCode(str.charCodeAt(i) - x);
         }else{
-          newstrinarray += String.fromCharCode(y.charCodeAt(i) + 26 - x);
+          newstring += String.fromCharCode(str.charCodeAt(i) + 26 - x);
         }
       }else{
-        newstrinarray='<i>"Ops, caracteres ingresados no validos"</i>';
+        newstring += String.fromCharCode(str.charCodeAt(i));
       }
     }
-    return newstrinarray;
+    return newstring;
   },
 };
 

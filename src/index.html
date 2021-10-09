@@ -37,15 +37,24 @@
     <article id="segundaPantalla" style="display: none;">
       <h2>BIENVENIDA</h2>
       <p>INTRODUCCION</p>
-      
       <section class="Cifrado">
-        Colocar offset  <input type="number" id="Desplazamiento" style="width:350px"><br>
-        Ingresar texto a cifrar o descifrar  <input type="text" id="textParaCipher">
-        <i><p id="textcodeencode"></p></i>
-        <button id="refresh" class="botones">refrescar</button>
-        <button id="Codificar" class="botones">Cifrar</button>
-        <button id="Decodificar" class="botones">Descifrar</button>
+        <form id="formulario">
+          <section>
+          <p> Colocar offset
+            <input type="number" id="Desplazamiento" style="width:350px">
+          </p>
+          <p>
+            Ingresar texto a cifrar o descifrar:
+             <input type="text" id="textParaCipher" >
+          </p>
+          </section>
+          <button type="reset" id="refresh" class="botones">refrescar</button>
+        </form>
+          <i><p id="textcodeencode"></p></i>
+          <button id="Codificar" class="botones">Cifrar</button>
+          <button id="Decodificar" class="botones">Descifrar</button><br>  
       </section>
+      
     </article>
   </main>
   <script src="index.js" type="module"></script>

@@ -18,20 +18,28 @@ correccion.addEventListener("click", () => {
 })
 const bttnCode = document.getElementById("Codificar");
 bttnCode.addEventListener("click", () => {
-  let offset = Number(document.getElementById("Desplazamiento").value);
+  let offset = parseInt(document.getElementById("Desplazamiento").value);
   let string = document.getElementById("textParaCipher").value;
-  document.getElementById("textcodeencode").innerHTML = cipher.encode(offset, string.toUpperCase());
+  if(offset>=0){
+    document.getElementById("textcodeencode").innerHTML = cipher.encode(offset, string);
+  }else{
+    document.getElementById("textcodeencode").innerHTML = cipher.decode(-offset, string);
+  }
+  
 })
 
 const bttnEnCode = document.getElementById("Decodificar");
 bttnEnCode.addEventListener("click", () => {
-  let offset = Number(document.getElementById("Desplazamiento").value);
+  let offset = parseInt(document.getElementById("Desplazamiento").value);
   let string = document.getElementById("textParaCipher").value;
-  document.getElementById("textcodeencode").innerHTML = cipher.decode(offset, string.toUpperCase());
+  if(offset>=0){
+    document.getElementById("textcodeencode").innerHTML = cipher.decode(offset, string);
+  }else{
+    document.getElementById("textcodeencode").innerHTML = cipher.encode(-offset, string);
+  }
 })
 const REFRESCAR = document.getElementById("refresh");
 REFRESCAR.addEventListener("click", () => {
-
   document.getElementById("textcodeencode").innerHTML = "";
 })
 console.log(cipher);
