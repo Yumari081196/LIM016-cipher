@@ -5,19 +5,19 @@ correccion.addEventListener("click", () => {
   let edad = document.getElementById("Edad").value;
   let edadInt = Number(edad);
   if (isNaN(edadInt) || edadInt <= 0 || edadInt == "") {
-    document.getElementById("advertencia").innerHTML = "Advertencia";
+    document.getElementById("advertencia").innerHTML = "Rellenar el campo de manera correcta";
     throw new TypeError("Ocurrio un error");
   }
   if (edadInt < 15 || edadInt>90) {
-    document.getElementById("advertencia").innerHTML = "Advertencia";
+    document.getElementById("advertencia").innerHTML = "Tener minimo 15 años";
     return;
   } else {
     document.getElementById("primeraPantalla").style.display = "none";
     document.getElementById("segundaPantalla").style.display = "block";
   }
 })
-const bttnCode = document.getElementById("Codificar");
-bttnCode.addEventListener("click", () => {
+const bttnEncode = document.getElementById("Codificar");
+bttnEncode.addEventListener("click", () => {
   let offset = parseInt(document.getElementById("Desplazamiento").value);
   let string = document.getElementById("textParaCipher").value;
   if(offset>=0){
@@ -28,8 +28,8 @@ bttnCode.addEventListener("click", () => {
   
 })
 
-const bttnEnCode = document.getElementById("Decodificar");
-bttnEnCode.addEventListener("click", () => {
+const bttnDecode = document.getElementById("Decodificar");
+bttnDecode.addEventListener("click", () => {
   let offset = parseInt(document.getElementById("Desplazamiento").value);
   let string = document.getElementById("textParaCipher").value;
   if(offset>=0){

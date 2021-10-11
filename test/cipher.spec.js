@@ -25,8 +25,11 @@ describe('cipher', () => {
       expect(() => cipher.encode(0, 0)).toThrow(TypeError);
     });
 
-    it('should return "HIJKLMNOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with offset 33', () => {
-      expect(cipher.encode(33, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
+    it('should return "HIJKLMNÑOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" with offset 33', () => {
+      expect(cipher.encode(33, 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ')).toBe('HIJKLMNÑOPQRSTUVWXYZABCDEFG');
+    });
+    it('should return "hijklmnñopqrstuvwxyzabcdefg" for "abcdefghijklmnñopqrstuvwxyz" with offset 33', () => {
+      expect(cipher.encode(33, 'abcdefghijklmnñopqrstuvwxyz')).toBe('hijklmnñopqrstuvwxyzabcdefg');
     });
 
     // Hacker edition
@@ -53,9 +56,9 @@ describe('cipher', () => {
     // Se quiser adicionar testes para caracteres não alfabéticos, descomente o
     // teste abaixo.
     //
-    // it('should return " !@" for " !@"', () => {
-    //   expect(cipher.encode(33, ' !@')).toBe(' !@');
-    // });
+     it('should return " !@" for " !@"', () => {
+       expect(cipher.encode(33, ' !@')).toBe(' !@');
+     });
   });
 
   describe('cipher.decode', () => {
@@ -71,9 +74,14 @@ describe('cipher', () => {
       expect(() => cipher.decode(0, 0)).toThrow(TypeError);
     });
 
-    it('should return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" for "HIJKLMNOPQRSTUVWXYZABCDEFG" with offset 33', () => {
-      expect(cipher.decode(33, 'HIJKLMNOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    it('should return "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" for "HIJKLMNÑOPQRSTUVWXYZABCDEFG" with offset 33', () => {
+      expect(cipher.decode(33, 'HIJKLMNÑOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
     });
+    it('should return "abcdefghijklmnñopqrstuvwxyz" for "hijklmnñopqrstuvwxyzabcdefg" with offset 33', () => {
+      expect(cipher.decode(33, 'hijklmnñopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnñopqrstuvwxyz');
+    });
+
+    
 
     //
     // Hacker edition
@@ -100,9 +108,9 @@ describe('cipher', () => {
     // Se quiser adicionar testes para caracteres não alfabéticos, descomente o
     // teste abaixo.
     //
-    // it('should return " !@" para " !@"', () => {
-    //   expect(cipher.decode(33, ' !@')).toBe(' !@');
-    // });
+     it('should return " !@" para " !@"', () => {
+       expect(cipher.decode(33, ' !@')).toBe(' !@');
+     });
   });
 
 });
