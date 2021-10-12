@@ -27,12 +27,12 @@ h1{
     font-family: 'Baumans', cursive;
     font-size: 100px;
     color: #f84a4a;
-    margin: 45px;
+    margin: 30px;
 }
 h3{
     font-size: 28px;
     color: rgb(247, 240, 240);
-    margin: 0px 25px 5px 25px;
+    margin: 0px 35px 25px 35px;
 }
 .primerapantalla{
     display: inline-flex;
