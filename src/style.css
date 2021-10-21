@@ -1,7 +1,7 @@
 body{    
     overflow: hidden;
     margin: 0%;
-    background:linear-gradient(#210433 35%,#613AB2,#C754A6) ;
+    background:linear-gradient(#4D0B75 15%,#B89CF3,#EE95C4) ;
 }
 main{
     min-height: 100vh;
@@ -14,7 +14,7 @@ main{
 /*Primera Pantalla*/
 #primeraPantalla{
     width: 50%;
-    padding-top: 3%;
+    padding-top: 2%;
 }
 h1{
     
@@ -22,11 +22,11 @@ h1{
     font-family: 'Love Ya Like A Sister', cursive;
     font-size: 100px;
     border-radius: 0px 20px 20px 0px;
-    background: #8D64E4;
+    background: #EC73AD;
     color: rgb(253, 253, 253);
     margin: 0%;
     padding-left: 4%;
-    text-shadow: 0 0 10px rgb(213, 171, 241), 0 0 10px rgb(213,171, 241), 0 0 80px rgb(213, 171, 241);
+    text-shadow: 0 0 10px rgb(241, 171, 220), 0 0 10px rgb(241,171, 220), 0 0 80px rgb(241, 171, 220);
 
 }
 h3{
@@ -68,7 +68,7 @@ a:active{
     height: 25px;
     font-size: 24px;
     padding: 2%;
-    background: #E42882;
+    background: #EE95C4;
     border-radius: 15px;
     display: flex;
 }
@@ -90,14 +90,14 @@ a:active{
     border-radius: 20px;
 }
 .botones{
-    background: #a8c5d3ea;
+    background: #A0D9EB;
     color: rgb(83, 8, 145);
     font-size: 100%;
     width: 50%;
     height: 35px;
     border-width: 0.8mm;
     border-radius: 10px;
-    border-color: #bd21b5;
+    border-color: #e6bff8;
     margin:2% 25%;
 }
 .botones:hover{
@@ -114,11 +114,11 @@ a:active{
     justify-content: center;
     margin: 0% 25%;
     height: 90px;
-    background:#cae8f7ea;
+    background:#f6f8f8ea;
     border-radius: 20px;
     border-width: 5px;
     border-style: double;
-    border-color: #3a1486;
+    border-color: #3cb6ee;
 
 }
 #EspacioNuevo p{
@@ -160,13 +160,13 @@ p{
     font-size: 24px;
 }
 .Botones{
-    background: #E42882;
+    background: #A0D9EB;
     margin:0%; 
     width: 20%;
     border-radius: 5px;
-    border-color: #5f065b;
+    border-color: #e6bff8;
     height: 35px;
-    color: rgb(252, 251, 253);
+    color: rgb(74, 12, 136);
     font-size: 100%;
 }
 
