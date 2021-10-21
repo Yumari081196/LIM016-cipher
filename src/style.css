@@ -90,14 +90,14 @@ a:active{
     border-radius: 20px;
 }
 .botones{
-    background: #b2e9fcea;
+    background: #a8c5d3ea;
     color: rgb(83, 8, 145);
     font-size: 100%;
     width: 50%;
     height: 35px;
-    border-width: 1mm;
+    border-width: 0.8mm;
     border-radius: 10px;
-    border-color: #b3a2da;
+    border-color: #bd21b5;
     margin:2% 25%;
 }
 .botones:hover{
@@ -112,11 +112,14 @@ a:active{
     display: flex;
     padding: 1% 2%;
     justify-content: center;
-    margin: 0% 20%;
+    margin: 0% 25%;
     height: 90px;
-    background:#ffffffea;
+    background:#cae8f7ea;
     border-radius: 20px;
-    box-shadow: 0 0 10px #f1c1e5ea, 0 0 15px #f1c1e5ea, 0 0 50px #f1c1e5ea;
+    border-width: 5px;
+    border-style: double;
+    border-color: #3a1486;
+
 }
 #EspacioNuevo p{
     color: black;
@@ -165,7 +168,6 @@ p{
     height: 35px;
     color: rgb(252, 251, 253);
     font-size: 100%;
-    border-radius: 15px;
 }
 
 @media(max-width:1030px){
