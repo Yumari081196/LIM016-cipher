@@ -4,60 +4,75 @@
 <head>
   <meta charset="utf-8">
   <title>Caesar Cipher</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
   <main id="root">
-    <h1>LOVECRYPT</h1>
     <article id="primeraPantalla">
-      <h3>Codifica esos mensajes que solo compartirias con tu ser amado
-        mediante un lenguaje que solo ustedes dos conozcan manteniendo en privado esos temas
-        que no quieres que nadie más se entere</h3>
-        
-      <section class="primerapantalla">
-        <section class="col1">
-          Compartir tu ordenador o smartphone(o extraviarlos) siempre impedira que cuentes con absoluta privacidad
-            para intercambiar mensajes de forma segura, y mas aun si quieres enviar o recibir mensajes de amor. Lovecrypt
-            es una app que cifra y descifra textos
-        </section>
-        <section class="col2">
-          <p class="datosuser">ALIAS(Opcional)</p>
-          <input type="text" size="35">
-          <p class="datosuser">EDAD(Obligatorio)</p>
-          <input type="number" id="Edad" style="width:280px" max="90">
-          <i><p id="advertencia"></p></i>
-          <center><button id="Boton" class="botones">Continuar</button></center>
-        </section>
-      </section>
-
+      <h1>LoveCrypt</h1>
+      <h3>Codifica esos mensajes que solo compartirias con tu ser
+        amado mediante un lenguaje que solo ustedes dos conozcan </h3>
+      <input type="number" id="Edad" placeholder="Ingresar Edad..." style="margin-left: 6%; height: 24px;">
+      <p id="advertencia"></p>
+      <br><button id="DePantalla1a2" class="Botones" style="margin-left: 6%;">Empezar</button>
     </article>
+
     <article id="segundaPantalla" style="display: none;">
-      <h2>BIENVENIDA</h2>
-      <p>INTRODUCCION</p>
-      <section class="Cifrado">
-        <form id="formulario">
-          <section>
-          <p> Colocar offset
-            <input type="number" id="Desplazamiento" style="width:350px">
-          </p>
-          <p>
-            Ingresar texto a cifrar o descifrar:
-             <input type="text" id="textParaCipher" >
-          </p>
+      <a href="#" id="Abrir">Ayuda ?</a>
+      <form>
+        <section id="Cifrado">
+          <section id="OFFSET">
+            Desplazamiento
+            <input type="number" id="Desplazamiento" style="width:30%; margin-left: 5%;">
           </section>
-          <button type="reset" id="refresh" class="botones">refrescar</button>
-        </form>
-          <i><p id="textcodeencode"></p></i>
-          <button id="Codificar" class="botones">Cifrar</button>
-          <button id="Decodificar" class="botones">Descifrar</button><br>  
-      </section>
+          <section id="ENCODE" class="EspacioCipher">
+            <p>Ingresar texto a cifrar</p>
+            <textarea cols="30" rows="3" id="textToEncode" style="width: 100%;"></textarea><br>
+            <input type="button" id="Codificar" class="botones" value="CIFRAR">
+          </section>
+          <section id="DECODE" class="EspacioCipher">
+            <p>Ingresar texto a descifrar</p>
+            <textarea cols="30" rows="3" id="textToDecode" style="width: 100%;"></textarea><br>
+            <input type="button" id="Decodificar" class="botones" value="DESCIFRAR">
+          </section>
+        </section>
+
+        <section id="EspacioNuevo">
+          <section style="width: 80%;">
+            <p>El nuevo mensaje es:</p>
+            <p id="newMessage"></p>
+          </section>
+          <section style="width: 20%;">
+            <center><img src="corazon.svg" style="width: 100%;"></center>
+          </section>
+        </section>
+        <br>
+        <center><input type="reset" id="refresh" class="Botones" value="REFRESCAR"></center>
+      </form>
       
+    </article>
+
+    <article id="Ayuda" style="display: none;">
+      <section id="vent">
+        <center><h2>¿No sabes qué hacer?</h2>
+        <img src="instruccionIMG.svg" style="width: 50%;"><br>
+        <br> Lovecrypt te ayuda a crear tu propio lenguaje secreto.
+        Desplaza la posición de las letras y números para obtener tu nuevo mensaje 
+      <ul style="text-align: left;">INSTRUCCIONES
+        <li>Ingresa el N° de desplazamiento en el cuadro superior</li>
+        <li>Ingresa el texto a cifrar/descifrar en el lugar correspondiente</li>
+        <li>Presiona el botón correspondiente al cuadro que elegiste</li>
+        <li>Su nuevo mensaje aparecerá en el cuadro inferior con el color de letra igual al espacio que eligió</li>
+        <li>Presiona REFRESCAR para empezar otra vez</li>
+      </ul>
+      <button id="Cerrar" class="Botones">Cerrar</button></center>
+      </section>
     </article>
   </main>
   <script src="index.js" type="module"></script>
 </body>
-
 </html>

@@ -25,15 +25,19 @@ describe('cipher', () => {
       expect(() => cipher.encode(0, 0)).toThrow(TypeError);
     });
 
-    it('should return "HIJKLMNÑOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" with offset 34', () => {
-      expect(cipher.encode(34, 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ')).toBe('HIJKLMNÑOPQRSTUVWXYZABCDEFG');
+    it('should return "HIJKLMNOPQRSTUVWXYZABCDEFG" for "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with offset 33', () => {
+      expect(cipher.encode(33, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
     });
-    it('should return "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" for "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" with offset 27', () => {
-      expect(cipher.encode(27, 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZa')).toBe('ABCDEFGHIJKLMNÑOPQRSTUVWXYZa');
+    it('should return "hijklmnopqrstuvwxyzabcdefg" for "abcdefghijklmnopqrstuvwxyz" with offset 33', () => {
+      expect(cipher.encode(33, 'abcdefghijklmnopqrstuvwxyz')).toBe('hijklmnopqrstuvwxyzabcdefg');
     });
-    it('should return "hijklmnñopqrstuvwxyzabcdefg" for "abcdefghijklmnñopqrstuvwxyz" with offset 34', () => {
-      expect(cipher.encode(34, 'abcdefghijklmnñopqrstuvwxyz')).toBe('hijklmnñopqrstuvwxyzabcdefg');
+    it('should return "ÓÚÁÉÍóúáéí" for "ÁÉÍÓÚáéíóú" with offset 33', () => {
+      expect(cipher.encode(33, 'ÁÉÍÓÚáéíóú')).toBe('ÓÚÁÉÍóúáéí');
     });
+    it('should return "3456789012" for "0123456789" with offset 33', () => {
+      expect(cipher.encode(33, '0123456789')).toBe('3456789012');
+    });
+
 
     // Hacker edition
     //
@@ -77,14 +81,17 @@ describe('cipher', () => {
       expect(() => cipher.decode(0, 0)).toThrow(TypeError);
     });
 
-    it('should return "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" for "HIJKLMNÑOPQRSTUVWXYZABCDEFG" with offset 34', () => {
-      expect(cipher.decode(34, 'HIJKLMNÑOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNÑOPQRSTUVWXYZ');
+    it('should return "ABCDEFGHIJKLMNOPQRSTUVWXYZ" for "HIJKLMNOPQRSTUVWXYZABCDEFG" with offset 33', () => {
+      expect(cipher.decode(33, 'HIJKLMNOPQRSTUVWXYZABCDEFG')).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     });
-    it('should return "abcdefghijklmnñopqrstuvwxyz" for "hijklmnñopqrstuvwxyzabcdefg" with offset 34', () => {
-      expect(cipher.decode(34, 'hijklmnñopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnñopqrstuvwxyz');
+    it('should return "abcdefghijklmnopqrstuvwxyz" for "hijklmnopqrstuvwxyzabcdefg" with offset 33', () => {
+      expect(cipher.decode(33, 'hijklmnopqrstuvwxyzabcdefg')).toBe('abcdefghijklmnopqrstuvwxyz');
     });
-    it('should return "ABCDEFGHIJKLMNÑOPQRSTUVWXYZa" for "ABCDEFGHIJKLMNÑOPQRSTUVWXYZa" with offset 27', () => {
-      expect(cipher.decode(27, 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZa')).toBe('ABCDEFGHIJKLMNÑOPQRSTUVWXYZa');
+    it('should return "ÁÉÍÓÚáéíóú" for "ÓÚÁÉÍóúáéí" with offset 33', () => {
+      expect(cipher.decode(33, 'ÓÚÁÉÍóúáéí')).toBe('ÁÉÍÓÚáéíóú');
+    });
+    it('should return "0123456789" for "3456789012" with offset 33', () => {
+      expect(cipher.decode(33, '3456789012')).toBe('0123456789');
     });
     
 
